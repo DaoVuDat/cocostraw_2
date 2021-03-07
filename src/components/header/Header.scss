@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  width: calc(100vw - 2 * 1rem);
+  display: flex;
+  top: 0;
+  background-color: yellow;
+  height: 10vh;
+
+  &__logo-container {
+    flex: 0 0 50%;
+    padding: 0.5rem 0;
+  }
+
+  &__logo {
+    margin-left: 10rem;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__list-container {
+    flex: 0 0 50%;
+  }
+
+  &__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    li {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      list-style: none;
+      justify-self: flex-end;
+      border-bottom: 1px solid transparent;
+    }
+
+    li:not(:first-child) {
+      margin-left: 3rem;
+    }
+
+    li::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 100%;
+      border-bottom: 2px solid red;
+      transition: all 0.3s ease-in;
+    }
+
+    li:hover::after {
+      width: 100%;
+    }
+  }
+}
